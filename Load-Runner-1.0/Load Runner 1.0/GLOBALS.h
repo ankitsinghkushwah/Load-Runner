@@ -3,12 +3,6 @@
 #ifndef GLOBALS_H
 #define GLOBALS_H
 
-/*
-Don't ever put anything in header file that allocates storage.
-Like I did here.
-It will make your life hell by giving you a lot of linking errors!
-*/
-
 const int TILE_WIDTH = 54;
 const int TILE_HEIGHT = 48;
 const int ROWS = 13;
