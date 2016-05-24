@@ -24,7 +24,7 @@ inline int blockNumber(int row, int col)
 }
 
 
-//Resolution of display
+//Window dimensions
 const int WIDTH = 1188;
 const int HEIGHT = 624;
 //Frames per second
