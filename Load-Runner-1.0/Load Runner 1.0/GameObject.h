@@ -4,7 +4,6 @@
 #ifndef GAMEOBJECT_H
 #define GAMEOBJECT_H
 
-//The key ingridient of the game i.e GameObject class
 class GameObject
 {
 public:
