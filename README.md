@@ -1,4 +1,4 @@
-A Very simple side scroller game made with C++ 11 and allegro game library.
+A Very simple side scroller game made with C++ 11 and allegro 5 game library.
 
 # Interesting stuff in this game
 
@@ -7,8 +7,7 @@ A Very simple side scroller game made with C++ 11 and allegro game library.
 
 # Limitations
 
-Dijkstra algorithm cannot process for more than two enemies.I will work on it to make it more fast so it can process
-more than two enemies.
+Dijkstra algorithm is not fully optimized.
 
 #Bugs
 
