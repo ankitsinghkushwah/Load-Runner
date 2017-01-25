@@ -14,14 +14,18 @@
 #include"Treasure.h"
 #include"ScoreBoard.h"
 #include"Camera.h"
+#include"SoundManager.h"
 
 
 class ActivityGame : public GameObject
 {
+
+
+	SoundManager *sm;
 	//compile time constants
 	static const int MAX_SPRITES = 4;
 	static const int MAX_TREASURES = 10;
-	static const int MAX_ENEMIES = 2;
+	static const int MAX_ENEMIES = 5;
 	enum EnspriteCurrRow { PLAYER, ENEMY, TILES ,TREASURE_IMG};
 
 	std::list<GameObject*> objs;

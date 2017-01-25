@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -18,13 +18,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -39,12 +39,12 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>D:\Ankit files\Third party libraries\allegro-5.0.10-msvc-11.0\include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\Ankit files\Third party libraries\allegro-5.0.10-msvc-11.0\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)/include;D:\Ankit files\Third party libraries\allegro-5.0.10-msvc-11.0\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>C:\Users\BSP-B.Tech\Documents\Visual Studio 2012\Projects\allegro-5.0.10-msvc-11.0\include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\Ankit files\Third party libraries\allegro-5.0.10-msvc-11.0\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)/include;C:\Users\BSP-B.Tech\Documents\Visual Studio 2012\Projects\allegro-5.0.10-msvc-11.0\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -78,6 +78,7 @@
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="MenuParent.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="SoundManager.cpp" />
     <ClCompile Include="StartMenuAct.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -94,6 +95,7 @@
     <ClInclude Include="MenuParent.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="ScoreBoard.h" />
+    <ClInclude Include="SoundManager.h" />
     <ClInclude Include="StartMenuAct.h" />
     <ClInclude Include="Treasure.h" />
   </ItemGroup>

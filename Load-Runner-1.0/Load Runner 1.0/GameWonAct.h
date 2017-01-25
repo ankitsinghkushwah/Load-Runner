@@ -6,9 +6,12 @@
 #include"MenuParent.h"
 #include"GLOBALS.h"
 
+#include"SoundManager.h"
+
 class GameWonAct : public MenuParent
 {
 
+	SoundManager *sm;
 public:
 
 	GameWonAct(int x,int y,GameManager *gm,const ALLEGRO_FONT* gameTitleFont,const ALLEGRO_FONT* actionMsgFont,const char* gameTitle,const char * acionMsg);

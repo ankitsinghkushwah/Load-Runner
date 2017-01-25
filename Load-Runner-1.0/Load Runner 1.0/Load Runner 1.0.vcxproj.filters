@@ -45,6 +45,9 @@
     <ClCompile Include="GameWonAct.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SoundManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ActivityGame.h">
@@ -60,9 +63,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GameObject.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GLOBALS.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Map.h">
@@ -90,6 +90,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GameWonAct.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GLOBALS.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

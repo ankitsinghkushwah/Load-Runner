@@ -206,35 +206,47 @@ void Enemy::update()
 
 void Enemy::render()
 {
-		al_draw_bitmap_region(enemySprite, sourceX*width, spriteCurrRow*height, width, height, x, y, 0);
+		
+	al_draw_bitmap_region(enemySprite, sourceX*width, spriteCurrRow*height, width, height, x, y, 0);
+
 }
 
 
 bool Enemy::collided(GameObject *Player)
 {
+
+
+	bool xCollision = false;
+	bool yCollision = false;
 	
-	if (player->getDir() == FOR_RIGHT)
+	int direction = player->getDir();
+
+	switch (direction)
 	{
-		if (player->getX() + TILE_WIDTH > x && player->getX() + TILE_WIDTH < x+TILE_WIDTH && player->getY() + yOffSet > y && player->getY() + yOffSet < y+TILE_HEIGHT)
-    			return true;
-	}
-	else if (player->getDir() == FOR_LEFT)
-	{
-		if (player->getX() > x && player->getX()  < x+TILE_WIDTH  && player->getY()+(TILE_HEIGHT/2) > y && player->getY() + (TILE_HEIGHT/2) < y+TILE_HEIGHT)
-			return true;
-	}
-	else if (player->getDir() == FOR_UP)
-	{
-		if (player->getX() + xOffSet > x && player->getX() + xOffSet < x + TILE_WIDTH && player->getY() > y && player->getY() < y + TILE_HEIGHT-yOffSet)
-			return true;
-	}
-	else if (player->getDir() == FOR_DOWN)
-	{
-		if (player->getX() + xOffSet > x && player->getX() + xOffSet < x + TILE_WIDTH && player->getY() + TILE_HEIGHT > y && player->getY() + TILE_HEIGHT < y + TILE_HEIGHT)
-			return true;
-	}
+
+	case GOING_RIGHT:
+		xCollision = player->getX() + TILE_WIDTH > x && player->getX() + TILE_WIDTH < x + TILE_WIDTH;
+		yCollision = player->getY() + yOffSet > y && player->getY() + yOffSet < y + TILE_HEIGHT;
+		break;
+
+	case GOING_LEFT:
+		xCollision = player->getX() > x && player->getX() < x + TILE_WIDTH;
+		yCollision = (player->getY() + (TILE_HEIGHT / 2) > y) &&
+			(player->getY() + (TILE_HEIGHT / 2) < y + TILE_HEIGHT);
+			break;
+
+	case GOING_UP:
+		xCollision = player->getX() + xOffSet > x && player->getX() + xOffSet < x + TILE_WIDTH;
+		yCollision = player->getY() > y && player->getY() < y + TILE_HEIGHT - yOffSet;
+			break;
 	
-	return false;
+	case GOING_DOWN:
+		xCollision = player->getX() + xOffSet > x && player->getX() + xOffSet < x + TILE_WIDTH;
+		yCollision = player->getY() + TILE_HEIGHT > y && player->getY() + TILE_HEIGHT < y + TILE_HEIGHT;
+			break;
+	}
+
+	return xCollision&&yCollision;
 }
 
 

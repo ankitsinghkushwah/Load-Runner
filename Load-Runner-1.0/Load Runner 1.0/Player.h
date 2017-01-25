@@ -45,6 +45,8 @@ protected:
 
 	int lastVertDir;
 
+	int direction;
+
 
 public:
 	Player();
@@ -57,7 +59,7 @@ public:
 	int getBottomLimOfLadder(int row, int col);
 	int getTopLimOfLadder(int row,int col);
 
-	int getDir() { return spriteCurrRow; }
+	int getDir() { return direction; }
 	int getX() { return x; }
 	int getY() { return y; }
 	int getRow();

@@ -38,6 +38,8 @@ Player::Player(ALLEGRO_BITMAP *playerSprite, int map[],int curRow,int curCol)
 
 	this->lastVertDir = FOR_DOWN;
 
+	this->direction = GOING_RIGHT;
+
 }
 
 
@@ -53,6 +55,7 @@ void Player::onKeyLeft()
 	{
 		canGo[RIGHT] = canGo[UP] = canGo[DOWN] = false;
 		spriteCurrRow = FOR_LEFT;
+		direction = GOING_LEFT;
 		x -= speed;
 
 		if (++currFrame >= frameDelay)
@@ -80,6 +83,7 @@ void Player :: onKeyRight()
 	{
 		canGo[LEFT] = canGo[UP] = canGo[DOWN] = false;
         spriteCurrRow = FOR_RIGHT;
+		direction = GOING_RIGHT;
 		x += speed;
 		if (++currFrame >= frameDelay)
 		{
@@ -108,6 +112,7 @@ void Player::onKeyUp()
 		onLadder = true;
 		colliding = true;
 		spriteCurrRow = FOR_UP;
+		direction = GOING_UP;
 		lastVertDir = FOR_UP;
 		y -= speed;
 	
@@ -137,8 +142,7 @@ void Player::onKeyDown()
 		onLadder = true;
 		colliding = true;
 		spriteCurrRow = FOR_DOWN;
-
-		//canGo[LEFT] = canGo[RIGHT] = false;
+		direction = GOING_DOWN;
 
 		lastVertDir = FOR_DOWN;
 

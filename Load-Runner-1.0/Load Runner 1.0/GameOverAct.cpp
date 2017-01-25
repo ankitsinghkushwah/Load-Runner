@@ -3,12 +3,17 @@
 
 GameOverAct::GameOverAct(int x, int y, GameManager *gm, const ALLEGRO_FONT * gameTitleFont, const ALLEGRO_FONT *actionMsgFont, const char* gameTitle, const char * actionMsg)
 {	
+	
+
 	MenuParent::init(x,y,gm,gameTitleFont,actionMsgFont,gameTitle,actionMsg);	
+	sm = new SoundManager;
+	sm->play_sfx("resources/sfx/gameover.mp3");
 }
 
 
 GameOverAct::~GameOverAct()
 {
+	delete sm;
 	delete actionMsg;
 	delete gameTitle;
 }

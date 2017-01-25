@@ -1,6 +1,7 @@
 #include"GameManager.h"
 
 #pragma comment(lib,"allegro-5.0.10-monolith-md-debug.lib")
+#pragma comment(lib,"irrklang.lib")
 
 
 //Main function

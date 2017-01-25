@@ -39,10 +39,13 @@ ActivityGame::ActivityGame(GameManager *gm) :player(0), mapObj(0)
 		{11,33}
 	};
 
-	int enemyPos[MAX_ENEMIES][2] = 
+	int enemyPos[MAX_ENEMIES][5] = 
 	{
 		{3,20},
 		{11,20},
+		{ 3,30 },
+		{ 11,35 },
+		{ 11,35 }
 			};
 
 	sprites[TILES] = al_load_bitmap("Resources/sprite_tiles.png");
@@ -93,6 +96,9 @@ ActivityGame::ActivityGame(GameManager *gm) :player(0), mapObj(0)
 
 		camera.init(player);
 		scoreBoard->updatePos(player->getX(),player->getY());
+
+		sm = new SoundManager;
+		sm->play_music("resources/music/goonies.mp3");
 	
 }
 
@@ -100,6 +106,7 @@ ActivityGame::ActivityGame(GameManager *gm) :player(0), mapObj(0)
 ActivityGame::~ActivityGame()
 {
 
+	delete sm;
 	
 	//destroying sprites
 	for (int i = 0; i < MAX_SPRITES; i++)
