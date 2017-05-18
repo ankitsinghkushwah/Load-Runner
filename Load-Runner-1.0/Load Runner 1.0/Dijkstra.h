@@ -221,7 +221,7 @@ std::vector<int> dijsktra(const int *map, Node *startNode, Node* goalNode)
 
 	/*
 	Creating Nodes for map (Allocating memory).
-	The Memory will allocated only for those nodes which are not the goalNode and the startNode
+	The Memory will be allocated only for those nodes which are not the goalNode and the startNode
 	*/
 	for (int row = 0; row < MAXROW; row++)
 	{
